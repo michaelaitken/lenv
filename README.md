@@ -78,10 +78,46 @@ lenv activate dev
 To deactivate the profile (manually):
 
 ```powershell
-exit
+lenv deactivate # Use 'exit' on Windows. See above
 ```
 
 Use `lenv help` for more command information.
+
+## Adding Variables to a Profile
+
+To add environment variables to a profile in `lenv`, you can edit the profile's corresponding YAML file. Each profile you create has its own YAML file stored in the `.lenv` directory under your project.
+
+### Steps to Add Variables
+
+1. **Navigate to the Profile File**:
+   - After you’ve created a profile (e.g., `dev`), go to the `.lenv` folder in your project directory.
+   - Open the profile’s YAML file. For example, if the profile is `dev`, the file will be located at `.lenv/dev.yaml`.
+
+2. **Add Variables in Key-Value Pairs**:
+   - Use the YAML format to define your environment variables in key-value pairs. Here’s an example:
+
+   ```yaml
+   DATABASE_URL: "postgres://dev_user:dev_pass@localhost/dev_db"
+   API_KEY: "dev-12345"
+   DEBUG: "true"
+   ```
+
+3. **Save the File**:
+   - After adding or editing the variables, save the file.
+
+4. **Refresh the Profile**:
+   - To update your environment with the new variables, deactivate and then reactivate the profile:
+   ```powershell
+   lenv deactivate # Use 'exit' on Windows. See above
+   lenv activate dev
+   ```
+   - The session will now reflect any changes made to the variables in `dev.yaml`.
+
+### Example Workflow
+
+If you need to add new variables or update existing ones in the profile, simply edit the YAML file, save it, then run `lenv deactivate` followed by `lenv activate <profile_name>` to load the updated variables.
+
+This approach provides a simple, file-based way to manage environment variables that can easily be version-controlled along with the rest of your project.
 
 ## Contributing
 
