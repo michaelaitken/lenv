@@ -48,9 +48,9 @@ I'm looking for alternative solutions to provide a more integrated deactivation 
 Since `lenv` is in the early stages, there isn't a formal installation process yet. To try it out, you can clone the repository and build it manually:
 
 ```bash
-git clone https://github.com/yourusername/lenv
+git clone https://github.com/michaelaitken/lenv
 cd lenv
-go build -o lenv
+go build -o .\build\lenv.exe .\cmd
 ```
 
 Then, add the compiled binary to your system’s PATH to make the `lenv` command globally accessible.
@@ -96,10 +96,6 @@ I'm especially interested in contributions that can help with:
 - **Finding alternative solutions for deactivation on Windows**
 
 If you'd like to contribute, feel free to fork the repository, make changes, and submit a pull request. I’ll review contributions as development priorities allow.
-
-## License
-
-No license has been added to this project yet.
 
 ---
 
